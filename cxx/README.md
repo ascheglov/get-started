@@ -1,0 +1,26 @@
+# Sample C++ application
+
+This tutorial shows how to make a C++ application.  
+It doesn't explain _how to write_ C++ code, only how to build and test it.
+
+## Software to install
+
+- [CMake](http://www.cmake.org/download/)
+- C++ compiler, one of:
+  - MS Visual Studio Community 2013
+  - MinGW - take latest from [MinGW-builds](http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/4.9.2/threads-posix/dwarf/)
+  - Clang or GCC on *nix
+- (optional) [Ninja](http://martine.github.io/ninja/)
+
+## Setting things up
+
+Create a directory for binary files, and run `cmake ..` from it.  
+You can do it with the `.\configure-*.bat`  files.
+
+## Build and test
+
+If you use MSVS, build the `./out-vc/crc32.sln` file.  
+For Ninja, run `ninja -C ./out/debug`.  
+Also, you can run a build tool from CMake, e.g. `cmake --build ./out-vc`.  
+
+Tests will be executed in a post-build step.
