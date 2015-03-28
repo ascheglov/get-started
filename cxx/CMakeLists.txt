@@ -14,3 +14,7 @@ include_directories(${CMAKE_SOURCE_DIR})
 
 add_subdirectory(calc_crc32)
 add_subdirectory(crc32)
+
+if(EMSCRIPTEN)
+    add_subdirectory(web_calc)
+endif()

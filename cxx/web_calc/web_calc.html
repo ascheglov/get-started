@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>CRC32 Calculator</title>
+    <script src="web_calc.js"></script>
+</head>
+<body>
+    Input:&nbsp;<input id="src" type="text" placeholder="text" /><br/>
+    CRC32:&nbsp;<span id="dst"></span>
+    <script>
+        var src = document.getElementById("src");
+        var dst = document.getElementById("dst");
+        src.addEventListener("input", function() {
+            var crc32 = new Module.Crc32();
+            crc32.update(src.value);
+            dst.textContent = crc32.digest;
+            crc32.delete();
+        });
+    </script>
+</body>
+</html>

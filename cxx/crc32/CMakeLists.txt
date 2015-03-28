@@ -14,4 +14,10 @@ add_executable(crc32_tests
 )
 target_link_libraries(crc32_tests crc32)
 set_target_properties(crc32_tests PROPERTIES FOLDER "CRC32 Library")
-add_custom_command(TARGET crc32_tests POST_BUILD COMMAND crc32_tests)
+
+# run tests
+if (NOT EMSCRIPTEN)
+    add_custom_command(TARGET crc32_tests POST_BUILD COMMAND crc32_tests)
+else()
+    add_custom_command(TARGET crc32_tests POST_BUILD COMMAND node crc32_tests)
+endif()
